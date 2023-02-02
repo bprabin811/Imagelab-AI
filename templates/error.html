@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link defer rel="stylesheet" href="../static/style.css" />
+    <script defer src="../static/script.js"></script>
+    <title>Error</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+
+  <body>
+    <!-- Header Starts from here -->
+    <header id="header">
+      <div class="right-header" id="righthead">Image<span>Lab</span></div>
+      <button id="nav-toggle" onclick="toggleNav()"><i class="fa fa-angle-double-down" aria-hidden="true" style="font-size: 25px;color: white;"></i>
+      </i>
+      </button>
+      <div class="left-header" id="lefthead">
+        <nav>
+          <ul id="nav-list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/pdftool">PDF Tools</a></li>
+            <li><a href="/colorize">Colorize Image</a></li>
+            <li><a href="/about">About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- Header Ends here -->
+    <!-- Section Starts here -->
+    <section class="error-container">
+        <i id="error" class="fa fa-exclamation-circle" aria-hidden="true"></i>
+        <h2>{{error_msg}}</h2>
+        <button class="button"><a href="/"><i class="fa fa-repeat" aria-hidden="true" style="font-size: 25px;color: white;"></i></a>
+        </button>
+    </section>
+    <footer class="flex">
+      <p>All Right Reserved. 2022</p>
+    </footer>
+  </body>
+</html>

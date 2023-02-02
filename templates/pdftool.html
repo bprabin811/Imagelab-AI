@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link defer rel="stylesheet" href="../static/style.css" />
+    <script defer src="../static/script.js"></script>
+    <script defer src="../static/loadingscreen.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>PDF Tools</title>
+
+  </head>
+
+  <body>
+    <!-- Header Starts from here -->
+    <header id="header">
+      <div class="right-header" id="righthead">Image<span>Lab</span></div>
+      <button id="nav-toggle" onclick="toggleNav()"><i class="fa fa-angle-double-down" aria-hidden="true" style="font-size: 25px;color: white;"></i>
+      </i>
+      </button>
+      <div class="left-header" id="lefthead">
+        <nav>
+          <ul id="nav-list">
+            <li><a href="/">Home</a></li>
+            <li class="active-btn"><a href="/pdftool">PDF Tools</a></li>
+            <li><a href="/colorize">Colorize Image</a></li>
+            <li><a href="/about">About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+      <div class="alert">
+        <p id="alert" style="display:none">Please select a file first. <button id="closeAlert" style="border: none; padding: 0px; border-radius: 50%; margin-left: 25px;"><i class="fa fa-times-circle" aria-hidden="true" style="font-size: 20px; color: red;"></i>        </button></p>
+      </div>
+    <!-- Header Ends here -->
+    <div class="search-container">
+      <form>
+        <input type="text" placeholder="Search.." id="search-input">
+        <button type="submit" id="search-button" class="button"><i class="fa fa-search"></i> Search</button>
+      </form>
+  </div>
+    <!-- Section Starts here -->
+    <section class="tool-sec-container">
+      
+      <!-- <div id="loading-dialog" style="display:none;background-color: transparent;"><img src="../static/loading.gif" alt="" style="width: 100px;"></div> -->
+      <div id="loading-dialog" style="display:none;background-color: transparent;"><img src="../static/load.gif" alt="" style="width: 100px;"></div>
+      
+
+
+      <div class="tool-col-2 flex">
+        <div class="image-row-2 flex">
+          <i class="fa fa-file" aria-hidden="true"></i>
+          <h1>Convert Images to PDF</h1>
+          <div class="form-container flex">
+            <form action="{{url_for('convert_to_pdf')}}" method="post" enctype="multipart/form-data" id="conv-form">
+              <input type="file" name="pfile" multiple>
+              <input type="submit" value="Convert to PDF" class="button" >
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="tool-col-2 flex">
+        <div class="image-row-2 flex">
+          <i class="fa fa-file-text" aria-hidden="true"></i>
+          <h1>Reduce PDF Size</h1>
+          <div class="form-container flex">
+            <form action="{{url_for('compresspdf')}}" method="post" enctype="multipart/form-data" id="compress-form">
+              <input type="file" name="cfile">
+              <input type="submit" value="Compress PDF" class="button" >
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="flex">
+      <p>All Right Reserved. 2022</p>
+    </footer>
+     
+
+  </body>
+</html>
+
+
+
+
