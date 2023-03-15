@@ -8,6 +8,7 @@
   list-style: none;
   /* font-family: "Lato", sans-serif; */
   font-family: "Chakra Petch", sans-serif;
+  text-decoration: none;
 }
 
 :root {
@@ -248,6 +249,7 @@ footer p {
 .search-container input{
   width: 300px;
   margin: 10px;
+  height: 30px;
   border: 1px solid var(--color-pink);
   outline: none;
   background-color: var(--color-white);
@@ -279,7 +281,7 @@ footer p {
 /*Error page */
 .error-container {
   border: 1px solid var(--color-grey-transparent);
-  height: 70vh;
+  min-height: 70vh;
   margin: 25px;
   border-radius: 5px;
   display: flex;
@@ -316,6 +318,22 @@ footer p {
   margin: 10px 25px;
   color: var(--color-grey-transparent);
 }
+.contact-form{
+  display: flex;
+/*   height: 400px; */
+/*   width: 350px; */
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+.contact-form input{
+  width: 200px;
+  padding: 5px;
+  height: 30px;
+  border-radius: 3px;
+  border: 1px solid var(--color-pink);
+}
+
 .error-container span {
   color: var(--color-pink);
   margin: 0px 10px;
@@ -338,6 +356,46 @@ height: 445px;
   border-radius: 10px;
   text-align: center;
   font-size: 20px;
+}
+
+.team-container{
+  display: flex;
+flex-wrap: wrap;
+justify-content: center;
+margin-top: 50px;
+}
+.card {
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+width: 200px;
+max-height: 300px;
+margin: 20px;
+text-align: center;
+padding: 20px;
+border-radius: 10px;
+}
+.card img {
+width: 100px;
+height: 100px;
+border-radius: 50%;
+margin-bottom: 20px;
+
+  
+}
+.card .name {
+font-size: 20px;
+font-weight: bold;
+margin-bottom: 10px;
+color: var(--color-primary);
+}
+.card .phone {
+  font-size: 14px;
+  color: grey;
+}
+.card .role{
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--color-pink);
 }
 
 .alert{

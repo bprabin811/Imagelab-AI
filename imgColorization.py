@@ -9,8 +9,9 @@ import base64
 import threading
 from time import sleep
 
+from utils import delete_folder
+
 client = MongoClient("mongodb://localhost:27017")
-# client = MongoClient("mongodb+srv://prabin:bprabin@cluster0.2phmxej.mongodb.net/test")
 db = client["imageLab"]
 colorization_collection = db['photos']
 

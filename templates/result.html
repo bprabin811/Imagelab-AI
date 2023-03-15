@@ -14,7 +14,7 @@
   <body>
     <!-- Header Starts from here -->
     <header id="header">
-      <div class="right-header" id="righthead">Image<span>Lab</span></div>
+      <a href="/"><div class="right-header" id="righthead">Image<span>Lab</span>AI</div></a>
       <button id="nav-toggle" onclick="toggleNav()"><i class="fa fa-angle-double-down" aria-hidden="true" style="font-size: 25px;color: white;"></i>
       </i>
       </button>
@@ -23,8 +23,9 @@
           <ul id="nav-list">
             <li><a href="/">Home</a></li>
             <li><a href="/pdftool">PDF Tools</a></li>
-            <li><a href="/colorize">Colorize Image</a></li>
+            <li><a href="/imgtool">Image Tools</a></li>
             <li><a href="/about">About</a></li>
+            <li><a href="/team">Our Team</a></li>
           </ul>
         </nav>
       </div>
@@ -43,11 +44,13 @@
       <div class="image-col-2 flex">
         <div class="image-row-2 flex">
           <img src="data:image/{{format}};base64,{{ image_data }}"/>
+          <!-- <img src="{{img}}" alt=""> -->
         </div>
       </div>
       <div class="image-col-2 flex">
         <div class="image-row-2 flex">
           <a href="{{ url_for('download', user_id=user_id) }}"><button class="button">Download</button></a>
+          <!-- <a href="{{ img }}" download><button class="button">Download</button></a> -->
         </div>
       </div>
     </section>

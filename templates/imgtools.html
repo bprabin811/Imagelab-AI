@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link defer rel="stylesheet" href="../static/style.css" />
+    <script defer src="../static/script.js"></script>
+    <!-- <script defer src="../static/loadingscreen.js"></script> -->
+    <title>Image - tools</title>
+  </head>
+
+  <body>
+    <!-- Header Starts from here -->
+    <header id="header">
+      <a href="/"><div class="right-header" id="righthead">Image<span>Lab</span>AI</div></a>
+      <button id="nav-toggle" onclick="toggleNav()"><i class="fa fa-angle-double-down" aria-hidden="true" style="font-size: 25px;color: white;"></i>
+      </i>
+      </button>
+      <div class="left-header" id="lefthead">
+        <nav>
+          <ul id="nav-list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/pdftool">PDF Tools</a></li>
+            <li  class="active-btn"><a href="/imgtool">Image Tools</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/team">Our Team</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="alert">
+      <p id="alert" style="display:none">Please select a file first. <button id="closeAlert" style="border: none;height: 20px;width: 20px; padding: 0px; border-radius: 50%; margin-left: 25px;"><i class="fa fa-times-circle" aria-hidden="true" style="font-size: 20px; color: red;"></i>        </button>
+    </div>
+    <!-- Header Ends here -->
+  <div class="search-container">
+      <form>
+        <input type="text" placeholder="Search.." id="search-input">
+        <button type="submit" id="search-button" class="button"><i class="fa fa-search"></i> Search</button>
+      </form>
+  </div>
+    <!-- Section Starts here -->
+
+    <section class="tool-sec-container">
+      <!-- <div id="loading-dialog" style="display:none;background-color: transparent;"><img src="../static/loading.gif" alt="" style="width: 100px;"></div> -->
+      <div id="loading-dialog" style="display:none;background-color: transparent;"><img src="../static/load.gif" alt="" style="width: 100px;"></div>
+      <div class="tool-col-2 flex">
+        <div class="image-row-2 flex">
+          <i class="fa fa-eraser" aria-hidden="true"></i>
+          <h1>Remove Background</h1>
+          <div class="form-container flex">
+            <form
+              action="/bgremove"
+              method="post"
+              enctype="multipart/form-data"
+              id="bgremove"
+            >
+              <input type="file" name="bfile" required/>
+              <input type="submit" value="Remove BG" class="button" />
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="tool-col-2 flex">
+        <div class="image-row-2 flex">
+          <i class="fa fa-compress" aria-hidden="true"></i>
+          <h1>Image Compression</h1>
+          <div class="form-container flex">
+            <form
+              action="/compressimg"
+              method="post"
+              enctype="multipart/form-data"
+              id="compress"
+            >
+              <input type="file" name="cfile" required/>
+              <input type="submit" value="Compress" class="button" />
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="tool-col-2 flex">
+        <div class="image-row-2 flex">
+          <i class="fa fa-repeat" aria-hidden="true"></i>
+          <h1>PNG to JPG Conversion</h1>
+          <div class="form-container flex">
+            <form
+              action="/pngtojpgconvert"
+              method="post"
+              enctype="multipart/form-data"
+              id="pngtojpgconvert"
+            >
+              <input type="file" name="file" required/>
+              <input type="submit" value="Convert" class="button" />
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="tool-col-2 flex">
+        <div class="image-row-2 flex">
+          <i class="fa fa-repeat" aria-hidden="true"></i>
+          <h1>JPG to PNG Conversion</h1>
+          <div class="form-container flex">
+            <form
+              action="/jpgtopngconvert"
+              method="post"
+              enctype="multipart/form-data"
+              id="jpgtopngconvert"
+            >
+              <input type="file" name="jfile" required/>
+              <input type="submit" value="Convert" class="button" />
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="tool-col-2 flex">
+        <div class="image-row-2 flex">
+          <i class="fa fa-repeat" aria-hidden="true"></i>
+          <h1>JPG/PNG to Gif Conversion</h1>
+          <div class="form-container flex">
+            <form
+              action="/togif"
+              method="post"
+              enctype="multipart/form-data"
+              id="togif"
+            >
+              <input type="file" name="img" required/>
+              <input type="submit" value="Convert" class="button" />
+            </form>
+          </div>
+        </div>
+      </div> -->
+      <div class="tool-col-2 flex">
+        <div class="image-row-2 flex">
+          <i class="fa fa-repeat" aria-hidden="true"></i>
+          <h1>Gif to Image Conversion</h1>
+          <div class="form-container flex">
+            <form
+              action="/giftoimg"
+              method="post"
+              enctype="multipart/form-data"
+              id="giftoimg"
+            >
+              <input type="file" name="kfile" required/>
+              <input type="submit" value="Convert" class="button" />
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="tool-col-2 flex">
+        <div class="image-row-2 flex">
+          <i class="fa fa-pencil-square" aria-hidden="true"></i>
+          <h1>Pencil Art Conversion</h1>
+          <div class="form-container flex">
+            <form
+              action="/topencilart"
+              method="post"
+              enctype="multipart/form-data"
+              id="topencilart"
+            >
+              <input type="file" name="sfile" required/>
+              <input type="submit" value="Convert" class="button" />
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      <div class="tool-col-2 flex">
+        <div class="image-row-2 flex">
+          <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+          <h1>Grayscale Conversion</h1>
+          <div class="form-container flex">
+            <form
+              action="/tograyscale"
+              method="post"
+              enctype="multipart/form-data"
+              id="tograyscale"
+            >
+              <input type="file" name="gfile" required/>
+              <input type="submit" value="Convert" class="button"/>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="flex">
+      <p>All Right Reserved. 2022</p>
+    </footer>
+    <script>
+      
+function handleFormSubmit(formId){
+  let form = document.getElementById(formId);
+  form.querySelector("input[type=submit]").addEventListener("click", function(e) {
+        e.preventDefault(); // prevent the form from being submitted immediately
+    // let fileInput = document.querySelector("input[type=file]")
+    let fileInput = document.getElementById(formId).querySelector("input[type=file]");
+    console.log(fileInput)
+    if (!fileInput.value) {
+        document.getElementById("alert").style.display = "flex";
+        document.getElementById("alert").style.backgroundColor ="#2c2c2e";
+        document.getElementById("alert").style.padding = "4px 10px";
+        document.getElementById("alert").style.borderRadius = "10px";
+        document.getElementById("alert").style.position = "fixed";
+        document.getElementById("alert").style.top = "50%";
+        document.getElementById("alert").style.height = "150px";
+        document.getElementById("alert").style.width = "350px";
+        document.getElementById("alert").style.alignItems = "center";
+        document.getElementById("alert").style.justifyContent = "center";
+        return;
+    }
+    document.getElementById("loading-dialog").style.display = "block";
+
+    setTimeout(function() {
+      document.getElementById(formId).submit();
+    }, 1000);
+  });
+  document.getElementById("closeAlert").addEventListener("click", function(e) {
+    document.getElementById("alert").style.display = "none";
+  });
+}
+      handleFormSubmit('bgremove')
+      handleFormSubmit('compress')
+      handleFormSubmit('pngtojpgconvert')
+      handleFormSubmit('jpgtopngconvert')
+
+      handleFormSubmit('togif')
+      handleFormSubmit('giftoimg')
+      handleFormSubmit('topencilart')
+      handleFormSubmit('tograyscale')
+    </script>
+  </body>
+</html>

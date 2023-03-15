@@ -83,3 +83,4 @@ def compress_pdf():
         return render_template('pdf.html', message="PDF Compression Successful", user_id=user_id)
     except Exception as e:
         return handle_error('Error occurred: {}'.format(e))
+

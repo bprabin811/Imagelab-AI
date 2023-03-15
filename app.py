@@ -2,7 +2,7 @@ import os
 from flask import Flask, request, render_template,Response,make_response
 from imgColorization import imgcolorize
 from PIL import Image
-from conversions import convert_to_jpg, convert_to_png, convertgif_toimg, convertto_art, convertto_grayscale, compress_image, convertto_gif
+from conversions import convert_to_jpg, compress_image, convert_to_png, convertgif_toimg, convertto_art, convertto_grayscale
 from removebg import remove_bg
 from utils import generate_unique_id, delete_folder
 import threading
@@ -24,6 +24,7 @@ pdf_collection = db["pdf_files"]
 bgremoved_collection = db['bgremoved']
 image_collection = db['Images']
 colorization_collection = db['photos']
+contact_collection = db['contactForm']
 
 app = Flask(__name__, template_folder='templates', static_folder='static',)
 
@@ -36,13 +37,18 @@ def hello_world():
 def pdftools():
     return render_template("pdftool.html")
 
-@app.route("/colorize")
+@app.route("/imgtool")
 def colorize():
-    return render_template("colorize.html")
+    return render_template("imgtools.html")
 
 @app.route("/about")
 def about():
     return render_template("about.html")
+
+
+@app.route("/team")
+def team():
+    return render_template("ourTeam.html")
 
 
 @app.route('/pngtojpgconvert', methods=['POST'])
@@ -64,10 +70,6 @@ def image_to_pencilart():
 @app.route('/tograyscale', methods=['POST'])
 def to_grayscale():
    return convertto_grayscale()
-
-@app.route('/togif', methods=['POST'])
-def to_gif():
-   return convertto_gif()
 
 @app.route('/giftoimg', methods=['POST'])
 def gif_to_img():
@@ -151,3 +153,23 @@ def save(user_id):
         return response
     except:
         return render_template("error.html",  error_msg='No file found on Database')
+
+@app.route('/contact-form-handler', methods=['POST'])
+def handle_contact_form():
+    try:
+        # client = MongoClient("mongodb+srv://prabin:bprabin@cluster0.2phmxej.mongodb.net/test")
+        # db = client["imageLab"]
+        # contact_collection = db['contactForm']
+
+        name = request.form["name"]
+        email = request.form["email"]
+        message = request.form["message"]
+        user_id = generate_unique_id()
+        data = {"contactID":user_id,"name": name, "email": email, "message": message}
+        contact_collection.insert_one(data)
+        return render_template("contact.html", message="Successfully submitted",contactId=user_id)
+    except Exception as e:
+        return render_template("error.html",  error_msg="Error occurred while saving form data: {}".format(str(e)))
+
+if  __name__ == "__main__":
+    app.run();

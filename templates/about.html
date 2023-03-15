@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../static/logo.ico">
+    <meta name="keywords" content="pdf tools, pdf size compression, images to pdf converter , photos to pdf converter ">
+    <meta name="keywords" content="Image tools, Image size compression, png to jpg converter , jpg to png converter , gif to image converter , greyscale converter , image to art converter ">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6768316926609854"
+     crossorigin="anonymous"></script>
     <link defer rel="stylesheet" href="../static/style.css" />
     <script defer src="../static/script.js"></script>
     <link
@@ -13,13 +18,13 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <title>About</title>
+    <title>ImageLab - About</title>
   </head>
 
   <body>
     <!-- Header Starts from here -->
     <header id="header">
-      <div class="right-header" id="righthead">Image<span>Lab</span></div>
+      <a href="/"><div class="right-header" id="righthead">Image<span>Lab</span>AI</div></a>
       <button id="nav-toggle" onclick="toggleNav()"><i class="fa fa-angle-double-down" aria-hidden="true" style="font-size: 25px;color: white;"></i>
       </i>
       </button>
@@ -28,8 +33,9 @@
           <ul id="nav-list">
             <li><a href="/">Home</a></li>
             <li><a href="/pdftool">PDF Tools</a></li>
-            <li><a href="/colorize">Colorize Image</a></li>
-            <li  class="active-btn"><a href="/about">About</a></li>
+            <li><a href="/imgtool">Image Tools</a></li>
+            <li class="active-btn"><a href="/about">About</a></li>
+            <li><a href="/team">Our Team</a></li>
           </ul>
         </nav>
       </div>
@@ -37,32 +43,29 @@
     <!-- Header Ends here -->
     <!-- Section Starts here -->
     <section class="error-container">
-      <h2 style="font-size: 16px;font-weight: bolder;">About Us</h2>
+        <h2 style="font-size: 16px;font-weight: bolder;">About Us</h2>
+
       <div class="text-head">
-        <p>
-          At imagelab, we're passionate about helping people enhance their
-          images. We offer a variety of image editing tools, including
-          colorization, background removal, and compression, to help you take
-          your pictures to the next level. Our team is made up of experienced
-          professionals who are dedicated to providing the highest quality
-          service. We use the latest technology and techniques to ensure that
-          your images are always looking their best. We understand that every
-          image is unique and that's why we offer personalized solutions to meet
-          the specific needs of each of our customers. we're here to help you
-          achieve the results you're looking for.
-        </p>
+        <p>We are here to help you with all your image conversion needs! Whether you want to convert your images to PDF or any other extension, our team of experts are ready to assist you. Please fill out the form below and we will get back to you as soon as possible:</p>
       </div>
       
-      <div class="text-head"><p>We're here to help you with your image editing needs. If you have any questions or feedback about our services, please feel free to contact us.</p></div>
-        <!-- <div class="social-link"></div> -->
-        <h3>Email:<span>pro.win811@gmail.com</span></h3>
-        <!-- <h3>Phone:<span>+9779810234567</span></h3> -->
-        <h3>Address:<span>Kathmandu, Nepal</span></h3>
-        <div class="text-head"><p>We will respond to your inquiry as soon as possible.</p></div>
-        <h3>
-          Thank you for choosing imagelab for all your needs. We
-          look forward to working with you!
-        </h3>
+        <div class="contact-form">
+          <form action="contact-form-handler" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="10" cols="40" style="resize: none;padding:5px;" required></textarea><br><br>
+            <input type="submit" value="Submit" class="button">
+          </form>
+          
+        </div>
+          <h3>
+            Thank you for choosing imagelab for all your needs. We
+            look forward to working with you!
+          </h3>
+        
     </section>
     <footer class="flex">
       <p>All Right Reserved. 2022</p>

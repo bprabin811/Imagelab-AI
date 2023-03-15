@@ -4,49 +4,46 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../static/logo.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link defer rel="stylesheet" href="../static/style.css" />
+    <link rel="stylesheet" href="../static/style.css" />
     <script defer src="../static/script.js"></script>
-    <script defer src="../static/timer.js"></script>
-    <title>Image Colorization</title>
+    
+    <title>Result</title>
   </head>
 
   <body>
     <!-- Header Starts from here -->
     <header id="header">
-      <a href="/"><div class="right-header" id="righthead">Image<span>Lab</span>AI</div></a>
+        <a href="/"><div class="right-header" id="righthead">Image<span>Lab</span>AI</div></a>
       <button id="nav-toggle" onclick="toggleNav()"><i class="fa fa-angle-double-down" aria-hidden="true" style="font-size: 25px;color: white;"></i>
       </i>
       </button>
       <div class="left-header" id="lefthead">
         <nav>
-          <ul id="nav-list">
-            <li><a href="/">Home</a></li>
-            <li><a href="/pdftool">PDF Tools</a></li>
-            <li><a href="/imgtool">Image Tools</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/team">Our Team</a></li>
-          </ul>
+            <ul id="nav-list">
+                <li><a href="/">Home</a></li>
+                <li><a href="/pdftool">PDF Tools</a></li>
+                <li><a href="/imgtool">Image Tools</a></li>
+                <li class="active-btn"><a href="/about">About</a></li>
+                <li><a href="/team">Our Team</a></li>
+              </ul>
         </nav>
       </div>
     </header>
     <!-- Header Ends here -->
     <!-- Section Starts here -->
-    <section class="sec-container">
+    <section class="error-container">
+      
       <div class="image-col-2 flex">
         <div class="image-row-2 flex">
-          <h1>|Before|</h1>
-          <img src="data:image/jpeg;base64,{{ original }}" alt="Error loading" />
-        </div>
-        <div class="image-row-2 flex">
-          <h1>|After|</h1>
-          <img src="data:image/jpeg;base64,{{ colored }}" alt="Error loading" />
+            <i class="fa fa-check-circle" aria-hidden="true" style="font-size: 50px;"></i>
+          <h1>{{message}}</h1>
         </div>
       </div>
       <div class="image-col-2 flex">
         <div class="image-row-2 flex">
-          <p id="countdown"></p>
-          <a href="{{ url_for('save', user_id=user_id) }}"><button class="button">Download</button></a>
+          <h2>Contact form submitted with id: {{contactId}}</h2>
         </div>
       </div>
     </section>
